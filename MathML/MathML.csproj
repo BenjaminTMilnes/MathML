@@ -56,10 +56,14 @@
     <Compile Include="MathMLOperator.cs" />
     <Compile Include="MathMLOperatorForm.cs" />
     <Compile Include="MathMLOverflow.cs" />
+    <Compile Include="MathMLOverscript.cs" />
     <Compile Include="MathMLRoot.cs" />
     <Compile Include="MathMLSquareRoot.cs" />
+    <Compile Include="MathMLSubscript.cs" />
+    <Compile Include="MathMLSuperscript.cs" />
     <Compile Include="MathMLText.cs" />
     <Compile Include="MathMLTextDirection.cs" />
+    <Compile Include="MathMLUnderscript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
