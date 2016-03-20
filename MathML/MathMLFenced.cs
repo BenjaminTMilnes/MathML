@@ -17,5 +17,16 @@ namespace MathML
 
         [MathMLAttributeName("close")]
         public string Close { get; set; }
+
+        public MathMLFenced() : this("(", ",", ")") { }
+
+        public MathMLFenced(string open, string close) : this(open, ",", close) { }
+
+        public MathMLFenced(string open, string separators, string close)
+        {
+            Open = open;
+            Separators = separators;
+            Close = close;
+        }
     }
 }
