@@ -41,12 +41,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathMLAttributeName.cs" />
+    <Compile Include="MathMLDisplay.cs" />
     <Compile Include="MathMLElement.cs" />
     <Compile Include="MathMLElementName.cs" />
     <Compile Include="MathMLFenced.cs" />
     <Compile Include="MathMLIdentifier.cs" />
+    <Compile Include="MathMLMath.cs" />
     <Compile Include="MathMLMathVariant.cs" />
     <Compile Include="MathMLNumber.cs" />
+    <Compile Include="MathMLOperator.cs" />
+    <Compile Include="MathMLOperatorForm.cs" />
+    <Compile Include="MathMLOverflow.cs" />
+    <Compile Include="MathMLText.cs" />
     <Compile Include="MathMLTextDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
