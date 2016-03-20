@@ -32,5 +32,17 @@ namespace MathML
 
         [MathMLAttributeName("symmetric")]
         public bool Symmetric { get; set; }
+
+        [MathMLAttributeName("lspace")]
+        public MathMLLength LeftSpace { get; set; }
+
+        [MathMLAttributeName("rspace")]
+        public MathMLLength RightSpace { get; set; }
+
+        [MathMLAttributeName("dir")]
+        public MathMLTextDirection TextDirection { get; set; }
+
+        [MathMLAttributeName("mathvariant")]
+        public MathMLMathVariant MathVariant { get; set; }
     }
 }

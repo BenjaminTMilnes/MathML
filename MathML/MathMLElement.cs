@@ -19,5 +19,11 @@ namespace MathML
 
         [MathMLAttributeName("href")]
         public string HRef { get; set; }
+
+        [MathMLAttributeName("mathcolor")]
+        public MathMLColor MathColor { get; set; }
+
+        [MathMLAttributeName("mathbackground")]
+        public MathMLColor MathBackgroundColor { get; set; }
     }
 }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathMLAttributeName.cs" />
+    <Compile Include="MathMLColor.cs" />
     <Compile Include="MathMLDisplay.cs" />
     <Compile Include="MathMLElement.cs" />
     <Compile Include="MathMLElementName.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="MathMLIdentifier.cs" />
     <Compile Include="MathMLLength.cs" />
     <Compile Include="MathMLLengthUnit.cs" />
+    <Compile Include="MathMLLineBreak.cs" />
     <Compile Include="MathMLMath.cs" />
     <Compile Include="MathMLMathVariant.cs" />
     <Compile Include="MathMLNumber.cs" />
@@ -57,7 +59,11 @@
     <Compile Include="MathMLOperatorForm.cs" />
     <Compile Include="MathMLOverflow.cs" />
     <Compile Include="MathMLOverscript.cs" />
+    <Compile Include="MathMLPadded.cs" />
+    <Compile Include="MathMLRGBColor.cs" />
     <Compile Include="MathMLRoot.cs" />
+    <Compile Include="MathMLRow.cs" />
+    <Compile Include="MathMLSpace.cs" />
     <Compile Include="MathMLSquareRoot.cs" />
     <Compile Include="MathMLSubscript.cs" />
     <Compile Include="MathMLSuperscript.cs" />
