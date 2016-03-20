@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
+    [MathMLElementName("mi")]
     public class MathMLIdentifier : MathMLElement
     {
+        [MathMLAttributeName("dir")]
         public MathMLTextDirection TextDirection { get; set; }
-        public string HRef { get; set; }
+        
+        [MathMLAttributeName("mathvariant")]
         public MathMLMathVariant MathVariant { get; set; }
     }
 }
