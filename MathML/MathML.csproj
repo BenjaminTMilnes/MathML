@@ -48,10 +48,12 @@
     <Compile Include="MathMLFenced.cs" />
     <Compile Include="MathMLFraction.cs" />
     <Compile Include="MathMLFractionPartAlignment.cs" />
+    <Compile Include="MathMLGlyph.cs" />
     <Compile Include="MathMLIdentifier.cs" />
     <Compile Include="MathMLLength.cs" />
     <Compile Include="MathMLLengthUnit.cs" />
     <Compile Include="MathMLLineBreak.cs" />
+    <Compile Include="MathMLLongDivision.cs" />
     <Compile Include="MathMLMath.cs" />
     <Compile Include="MathMLMathVariant.cs" />
     <Compile Include="MathMLNumber.cs" />
