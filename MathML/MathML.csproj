@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathMLAttributeName.cs" />
+    <Compile Include="MathMLAttributeValue.cs" />
     <Compile Include="MathMLColor.cs" />
     <Compile Include="MathMLDisplay.cs" />
     <Compile Include="MathMLElement.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="MathMLSquareRoot.cs" />
     <Compile Include="MathMLStyle.cs" />
     <Compile Include="MathMLSubscript.cs" />
+    <Compile Include="MathMLSubscriptSuperscript.cs" />
     <Compile Include="MathMLSuperscript.cs" />
     <Compile Include="MathMLTable.cs" />
     <Compile Include="MathMLTableCell.cs" />
@@ -86,6 +88,8 @@
     <Compile Include="MathMLText.cs" />
     <Compile Include="MathMLTextDirection.cs" />
     <Compile Include="MathMLUnder.cs" />
+    <Compile Include="MathMLUnderOver.cs" />
+    <Compile Include="MathMLUnderOverAlignment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

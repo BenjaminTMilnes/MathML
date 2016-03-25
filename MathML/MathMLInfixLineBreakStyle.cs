@@ -8,8 +8,13 @@ namespace MathML
 {
     public enum MathMLInfixLineBreakStyle
     {
+        [MathMLAttributeValue("before")]
         Before = 0,
+
+        [MathMLAttributeValue("after")]
         After = 1,
+
+        [MathMLAttributeValue("duplicate")]
         Duplicate = 2
     }
 }

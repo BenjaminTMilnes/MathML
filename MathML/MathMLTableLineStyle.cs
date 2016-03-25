@@ -8,8 +8,13 @@ namespace MathML
 {
     public enum MathMLTableLineStyle
     {
+        [MathMLAttributeValue("none")]
         None = 0,
+
+        [MathMLAttributeValue("solid")]
         Solid = 1,
+
+        [MathMLAttributeValue("dashed")]
         Dashed = 2
     }
 }

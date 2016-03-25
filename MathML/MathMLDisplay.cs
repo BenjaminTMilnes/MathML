@@ -8,7 +8,10 @@ namespace MathML
 {
     public enum MathMLDisplay
     {
+        [MathMLAttributeValue("block")]
         Block = 0,
+
+        [MathMLAttributeValue("inline")]
         Inline = 1
     }
 }

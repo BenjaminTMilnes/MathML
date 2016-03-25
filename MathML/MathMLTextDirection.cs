@@ -8,7 +8,10 @@ namespace MathML
 {
     public enum MathMLTextDirection
     {
+        [MathMLAttributeValue("ltr")]
         LeftToRight = 0,
+
+        [MathMLAttributeValue("rtl")]
         RightToLeft = 1
     }
 }
