@@ -45,11 +45,14 @@
     <Compile Include="MathMLDisplay.cs" />
     <Compile Include="MathMLElement.cs" />
     <Compile Include="MathMLElementName.cs" />
+    <Compile Include="MathMLEnclose.cs" />
+    <Compile Include="MathMLEncloseNotation.cs" />
     <Compile Include="MathMLFenced.cs" />
     <Compile Include="MathMLFraction.cs" />
     <Compile Include="MathMLFractionPartAlignment.cs" />
     <Compile Include="MathMLGlyph.cs" />
     <Compile Include="MathMLIdentifier.cs" />
+    <Compile Include="MathMLLabeledTableRow.cs" />
     <Compile Include="MathMLLabeledTableRowPlacement.cs" />
     <Compile Include="MathMLLength.cs" />
     <Compile Include="MathMLLengthUnit.cs" />
@@ -57,12 +60,14 @@
     <Compile Include="MathMLLongDivision.cs" />
     <Compile Include="MathMLMath.cs" />
     <Compile Include="MathMLMathVariant.cs" />
+    <Compile Include="MathMLMultiscripts.cs" />
     <Compile Include="MathMLNumber.cs" />
     <Compile Include="MathMLOperator.cs" />
     <Compile Include="MathMLOperatorForm.cs" />
     <Compile Include="MathMLOverflow.cs" />
-    <Compile Include="MathMLOverscript.cs" />
+    <Compile Include="MathMLOver.cs" />
     <Compile Include="MathMLPadded.cs" />
+    <Compile Include="MathMLPhantom.cs" />
     <Compile Include="MathMLRGBColor.cs" />
     <Compile Include="MathMLRoot.cs" />
     <Compile Include="MathMLRow.cs" />
@@ -71,12 +76,14 @@
     <Compile Include="MathMLSubscript.cs" />
     <Compile Include="MathMLSuperscript.cs" />
     <Compile Include="MathMLTable.cs" />
+    <Compile Include="MathMLTableCell.cs" />
     <Compile Include="MathMLTableColumnAlignment.cs" />
     <Compile Include="MathMLTableLineStyle.cs" />
+    <Compile Include="MathMLTableRow.cs" />
     <Compile Include="MathMLTableVerticalAlignment.cs" />
     <Compile Include="MathMLText.cs" />
     <Compile Include="MathMLTextDirection.cs" />
-    <Compile Include="MathMLUnderscript.cs" />
+    <Compile Include="MathMLUnder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

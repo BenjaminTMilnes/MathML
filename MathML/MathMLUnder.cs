@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MathML
 {
     [MathMLElementName("munder")]
-    public class MathMLUnderscript : MathMLElement
+    public class MathMLUnder : MathMLElement
     {
         [MathMLAttributeName("accentunder")]
         public bool Accent { get; set; }
