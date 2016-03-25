@@ -52,6 +52,7 @@
     <Compile Include="MathMLFractionPartAlignment.cs" />
     <Compile Include="MathMLGlyph.cs" />
     <Compile Include="MathMLIdentifier.cs" />
+    <Compile Include="MathMLInfixLineBreakStyle.cs" />
     <Compile Include="MathMLLabeledTableRow.cs" />
     <Compile Include="MathMLLabeledTableRowPlacement.cs" />
     <Compile Include="MathMLLength.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="MathMLRow.cs" />
     <Compile Include="MathMLSpace.cs" />
     <Compile Include="MathMLSquareRoot.cs" />
+    <Compile Include="MathMLStyle.cs" />
     <Compile Include="MathMLSubscript.cs" />
     <Compile Include="MathMLSuperscript.cs" />
     <Compile Include="MathMLTable.cs" />
