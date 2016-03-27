@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathMLAttributeName.cs" />
+    <Compile Include="MathMLAttributeOrderIndex.cs" />
     <Compile Include="MathMLAttributeValue.cs" />
     <Compile Include="MathMLColor.cs" />
     <Compile Include="MathMLDisplay.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="MathMLRGBColor.cs" />
     <Compile Include="MathMLRoot.cs" />
     <Compile Include="MathMLRow.cs" />
+    <Compile Include="MathMLSerializer.cs" />
     <Compile Include="MathMLSpace.cs" />
     <Compile Include="MathMLSquareRoot.cs" />
     <Compile Include="MathMLStyle.cs" />
