@@ -51,10 +51,34 @@ namespace MathML
 
         private Type GetMathMLElementType(MathMLElement element)
         {
-            if (element is MathMLNumber)
-            {
-                return typeof(MathMLNumber);
-            }
+            if (element is MathMLEnclose) return typeof(MathMLEnclose);
+            if (element is MathMLFenced) return typeof(MathMLFenced);
+            if (element is MathMLFraction) return typeof(MathMLFraction);
+            if (element is MathMLGlyph) return typeof(MathMLGlyph);
+            if (element is MathMLIdentifier) return typeof(MathMLIdentifier);
+            if (element is MathMLLabeledTableRow) return typeof(MathMLLabeledTableRow);
+            if (element is MathMLLongDivision) return typeof(MathMLLongDivision);
+            if (element is MathMLMath) return typeof(MathMLMath);
+            if (element is MathMLMultiscripts) return typeof(MathMLMultiscripts);
+            if (element is MathMLNumber) return typeof(MathMLNumber);
+            if (element is MathMLOperator) return typeof(MathMLOperator);
+            if (element is MathMLOver) return typeof(MathMLOver);
+            if (element is MathMLPadded) return typeof(MathMLPadded);
+            if (element is MathMLPhantom) return typeof(MathMLPhantom);
+            if (element is MathMLRoot) return typeof(MathMLRoot);
+            if (element is MathMLRow) return typeof(MathMLRow);
+            if (element is MathMLSpace) return typeof(MathMLSpace);
+            if (element is MathMLSquareRoot) return typeof(MathMLSquareRoot);
+            if (element is MathMLStyle) return typeof(MathMLStyle);
+            if (element is MathMLSubscript) return typeof(MathMLSubscript);
+            if (element is MathMLSubscriptSuperscript) return typeof(MathMLSubscriptSuperscript);
+            if (element is MathMLSuperscript) return typeof(MathMLSuperscript);
+            if (element is MathMLTable) return typeof(MathMLTable);
+            if (element is MathMLTableCell) return typeof(MathMLTableCell);
+            if (element is MathMLTableRow) return typeof(MathMLTableRow);
+            if (element is MathMLText) return typeof(MathMLText);
+            if (element is MathMLUnder) return typeof(MathMLUnder);
+            if (element is MathMLUnderOver) return typeof(MathMLUnderOver);
 
             throw new UnknownMathMLElementException();
         }
