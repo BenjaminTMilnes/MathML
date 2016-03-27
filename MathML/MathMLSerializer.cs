@@ -6,12 +6,32 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
-    public class UnknownMathMLElementException : Exception
-    { }
+    public class UnknownMathMLNodeException : Exception { }
+
+    public class UnknownMathMLElementException : Exception { }
 
     public class MathMLSerializer
     {
-        public string SerializeMathMLElement(MathMLElement element)
+        public string SerializeMathMLNode(IMathMLNode node)
+        {
+            if (node is MathMLElement)
+            {
+                return SerializeMathMLElement((MathMLElement)node);
+            }
+            else if (node is MathMLTextNode)
+            {
+                return SerializeMathMLTextNode((MathMLTextNode)node);
+            }
+
+            throw new UnknownMathMLNodeException();
+        }
+
+        private string SerializeMathMLTextNode(MathMLTextNode textNode)
+        {
+            return textNode.Content;
+        }
+
+        private string SerializeMathMLElement(MathMLElement element)
         {
             var type = GetMathMLElementType(element);
 
@@ -19,8 +39,14 @@ namespace MathML
             var attributes = GetAttributes(type, element);
 
             var attributeString = string.Join("", attributes.Select(a => string.Format(" {0}=\"{1}\"", a.Item1, a.Item3)));
+            var childElementsString = "";
 
-            return string.Format("<{0}{1}></{2}>", elementName, attributeString, elementName);
+            foreach (var node in element.Children)
+            {
+                childElementsString += SerializeMathMLNode(node);
+            }
+
+            return string.Format("<{0}{1}>{2}</{3}>", elementName, attributeString, childElementsString, elementName);
         }
 
         private Type GetMathMLElementType(MathMLElement element)

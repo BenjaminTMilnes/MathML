@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMathMLNode.cs" />
     <Compile Include="MathMLAttributeName.cs" />
     <Compile Include="MathMLAttributeOrderIndex.cs" />
     <Compile Include="MathMLAttributeValue.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="MathMLTableVerticalAlignment.cs" />
     <Compile Include="MathMLText.cs" />
     <Compile Include="MathMLTextDirection.cs" />
+    <Compile Include="MathMLTextNode.cs" />
     <Compile Include="MathMLUnder.cs" />
     <Compile Include="MathMLUnderOver.cs" />
     <Compile Include="MathMLUnderOverAlignment.cs" />

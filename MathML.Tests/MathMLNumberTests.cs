@@ -21,13 +21,24 @@ namespace MathML.Tests
         [TestMethod]
         public void EmptyMathMLNumberTest()
         {
-            Assert.AreEqual("<mn></mn>", _serializer.SerializeMathMLElement(new MathMLNumber()));
+            Assert.AreEqual("<mn></mn>", _serializer.SerializeMathMLNode(new MathMLNumber()));
+        }
+
+        [TestMethod]
+        public void MathMLNumberWithContentTest()
+        {
+            var textNode = new MathMLTextNode("1.2345");
+            var number = new MathMLNumber();
+
+            number.Children.Add(textNode);
+
+            Assert.AreEqual("<mn>1.2345</mn>", _serializer.SerializeMathMLNode(number));
         }
 
         [TestMethod]
         public void MathMLNumberWithIdTest()
         {
-            Assert.AreEqual("<mn id=\"number1\"></mn>", _serializer.SerializeMathMLElement(new MathMLNumber() { Id = "number1" }));
+            Assert.AreEqual("<mn id=\"number1\"></mn>", _serializer.SerializeMathMLNode(new MathMLNumber() { Id = "number1" }));
         }
     }
 }

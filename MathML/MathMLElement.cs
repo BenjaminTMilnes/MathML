@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
-    public abstract class MathMLElement
+    public abstract class MathMLElement : IMathMLNode
     {
         [MathMLAttributeName("id")]
         [MathMLAttributeOrderIndex(1)]
@@ -31,5 +31,14 @@ namespace MathML
         [MathMLAttributeName("mathcolor")]
         [MathMLAttributeOrderIndex(6)]
         public MathMLColor MathColor { get; set; }
+
+        public IMathMLNode Parent { get; set; }
+        public IList<IMathMLNode> Children { get; set; }
+
+        public MathMLElement()
+        {
+            Parent = null;
+            Children = new List<IMathMLNode>();
+        }
     }
 }
