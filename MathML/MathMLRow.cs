@@ -10,6 +10,12 @@ namespace MathML
     public class MathMLRow : MathMLElement
     {
         [MathMLAttributeName("dir")]
+        [DefaultValue(MathMLTextDirection.LeftToRight)]
         public MathMLTextDirection TextDirection { get; set; }
+
+        public MathMLRow()
+        {
+            TextDirection = MathMLTextDirection.LeftToRight;
+        }
     }
 }

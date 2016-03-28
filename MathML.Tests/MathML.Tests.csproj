@@ -69,7 +69,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="EquationTests.cs" />
+    <Compile Include="MathMLEncloseTests.cs" />
+    <Compile Include="MathMLFencedTests.cs" />
+    <Compile Include="MathMLFractionTests.cs" />
+    <Compile Include="MathMLIdentifierTests.cs" />
+    <Compile Include="MathMLMathTests.cs" />
     <Compile Include="MathMLNumberTests.cs" />
+    <Compile Include="MathMLOperatorTests.cs" />
+    <Compile Include="MathMLRootTests.cs" />
+    <Compile Include="MathMLRowTests.cs" />
+    <Compile Include="MathMLSubscriptTests.cs" />
+    <Compile Include="MathMLSuperscriptTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

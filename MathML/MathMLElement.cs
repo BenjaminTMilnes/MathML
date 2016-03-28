@@ -10,18 +10,22 @@ namespace MathML
     {
         [MathMLAttributeName("id")]
         [MathMLAttributeOrderIndex(1)]
+        [DefaultValue("")]
         public string Id { get; set; }
 
         [MathMLAttributeName("class")]
         [MathMLAttributeOrderIndex(2)]
+        [DefaultValue("")]
         public string StyleClass { get; set; }
 
         [MathMLAttributeName("style")]
         [MathMLAttributeOrderIndex(3)]
+        [DefaultValue("")]
         public string Style { get; set; }
 
         [MathMLAttributeName("href")]
         [MathMLAttributeOrderIndex(4)]
+        [DefaultValue("")]
         public string HRef { get; set; }
 
         [MathMLAttributeName("mathbackground")]
@@ -37,6 +41,10 @@ namespace MathML
 
         public MathMLElement()
         {
+            Id = "";
+            StyleClass = "";
+            Style = "";
+            HRef = "";
             Parent = null;
             Children = new List<IMathMLNode>();
         }

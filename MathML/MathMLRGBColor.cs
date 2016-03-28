@@ -8,5 +8,6 @@ namespace MathML
 {
     public class MathMLRGBColor : MathMLColor
     {
+        public MathMLRGBColor(string hexadecimalColorCode) { }
     }
 }

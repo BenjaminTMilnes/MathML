@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultValue.cs" />
     <Compile Include="IMathMLNode.cs" />
     <Compile Include="MathMLAttributeName.cs" />
     <Compile Include="MathMLAttributeOrderIndex.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="MathMLMath.cs" />
     <Compile Include="MathMLMathVariant.cs" />
     <Compile Include="MathMLMultiscripts.cs" />
+    <Compile Include="MathMLNamedColor.cs" />
+    <Compile Include="MathMLNamedColors.cs" />
     <Compile Include="MathMLNumber.cs" />
     <Compile Include="MathMLOperator.cs" />
     <Compile Include="MathMLOperatorForm.cs" />

@@ -10,12 +10,15 @@ namespace MathML
     public class MathMLFenced : MathMLElement
     {
         [MathMLAttributeName("open")]
+        [DefaultValue("(")]
         public string Open { get; set; }
 
         [MathMLAttributeName("separators")]
+        [DefaultValue(",")]
         public string Separators { get; set; }
 
         [MathMLAttributeName("close")]
+        [DefaultValue(")")]
         public string Close { get; set; }
 
         public MathMLFenced() : this("(", ",", ")") { }
