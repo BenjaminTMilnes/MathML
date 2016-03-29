@@ -8,7 +8,26 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLMultiscriptsTests
+    [TestClass]
+    public class MathMLMultiscriptsTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLMultiscriptsTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLMultiscriptsTest()
+        {
+            Assert.AreEqual("<mmultiscripts></mmultiscripts>", _serializer.SerializeMathMLNode(new MathMLMultiscripts()));
+        }
+
+        [TestMethod]
+        public void MathMLMultiscriptsWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mmultiscripts subscriptshift=\"4pt\" superscriptshift=\"8mm\"></mmultiscripts>", _serializer.SerializeMathMLNode(new MathMLMultiscripts() { SubscriptShift = new MathMLLength(4, MathMLLengthUnit.Points), SuperscriptShift = new MathMLLength(8, MathMLLengthUnit.Millimeters) }));
+        }
     }
 }
