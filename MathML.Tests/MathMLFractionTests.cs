@@ -23,5 +23,17 @@ namespace MathML.Tests
         {
             Assert.AreEqual("<mfrac></mfrac>", _serializer.SerializeMathMLNode(new MathMLFraction()));
         }
+
+        [TestMethod]
+        public void MathMLFractionWithNumeratorAlignmentAndDenominatorAlignmentTest()
+        {
+            Assert.AreEqual("<mfrac numalign=\"left\" denomalign=\"left\"></mfrac>", _serializer.SerializeMathMLNode(new MathMLFraction() { NumeratorAlignment = MathMLFractionPartAlignment.Left, DenominatorAlignment = MathMLFractionPartAlignment.Left }));
+        }
+
+        [TestMethod]
+        public void MathMLFractionWithBevelledTest()
+        {
+            Assert.AreEqual("<mfrac bevelled=\"true\"></mfrac>", _serializer.SerializeMathMLNode(new MathMLFraction() { Bevelled = true }));
+        }
     }
 }

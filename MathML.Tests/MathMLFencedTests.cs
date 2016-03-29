@@ -29,5 +29,11 @@ namespace MathML.Tests
         {
             Assert.AreEqual("<mfenced open=\"[\" close=\"]\"></mfenced>", _serializer.SerializeMathMLNode(new MathMLFenced() { Open = "[", Close = "]" }));
         }
+
+        [TestMethod]
+        public void MathMLFencedWithOpenCloseAndSeparatorsTest()
+        {
+            Assert.AreEqual("<mfenced open=\"[\" separators=\";\" close=\"]\"></mfenced>", _serializer.SerializeMathMLNode(new MathMLFenced() { Open = "[", Separators = ";", Close = "]" }));
+        }
     }
 }

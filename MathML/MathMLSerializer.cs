@@ -143,6 +143,7 @@ namespace MathML
                     else if (propertyType == typeof(MathMLTableVerticalAlignment)) attributeValue = SerializeEnumeration((MathMLTableVerticalAlignment)propertyValue);
                     else if (propertyType == typeof(MathMLTextDirection)) attributeValue = SerializeEnumeration((MathMLTextDirection)propertyValue);
                     else if (propertyType == typeof(MathMLUnderOverAlignment)) attributeValue = SerializeEnumeration((MathMLUnderOverAlignment)propertyValue);
+                    else if (propertyType == typeof(MathMLLength)) attributeValue = SerializeMathMLLength((MathMLLength)propertyValue);
                     else attributeValue = (string)propertyValue;
 
                     var defaultAttributeValue = "";
@@ -163,6 +164,7 @@ namespace MathML
                     else if (defaultValue is MathMLTableVerticalAlignment) defaultAttributeValue = SerializeEnumeration((MathMLTableVerticalAlignment)defaultValue);
                     else if (defaultValue is MathMLTextDirection) defaultAttributeValue = SerializeEnumeration((MathMLTextDirection)defaultValue);
                     else if (defaultValue is MathMLUnderOverAlignment) defaultAttributeValue = SerializeEnumeration((MathMLUnderOverAlignment)defaultValue);
+                    else if (defaultValue is MathMLLength) defaultAttributeValue = SerializeMathMLLength((MathMLLength)defaultValue);
                     else defaultAttributeValue = (string)defaultValue;
 
                     if (attributeValue != defaultAttributeValue)
@@ -193,6 +195,11 @@ namespace MathML
             var attribute = member[0].GetCustomAttributes(typeof(MathMLAttributeValue), true)[0];
 
             return ((MathMLAttributeValue)attribute).Value;
+        }
+
+        private string SerializeMathMLLength(MathMLLength length)
+        {
+            return string.Format("{0}{1}", length.Quantity.ToString(), SerializeEnumeration(length.Units));
         }
     }
 }

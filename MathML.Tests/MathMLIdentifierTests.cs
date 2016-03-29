@@ -25,6 +25,12 @@ namespace MathML.Tests
         }
 
         [TestMethod]
+        public void MathMLIdentifierWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mi dir=\"rtl\" mathvariant=\"fraktur\"></mi>", _serializer.SerializeMathMLNode(new MathMLIdentifier() { TextDirection = MathMLTextDirection.RightToLeft, MathVariant = MathMLMathVariant.Fraktur }));
+        }
+
+        [TestMethod]
         public void MathMLIdentifierWithContentTest()
         {
             var textNode = new MathMLTextNode("x");

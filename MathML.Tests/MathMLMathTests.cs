@@ -12,5 +12,22 @@ namespace MathML.Tests
     public class MathMLMathTests
     {
         private MathMLSerializer _serializer;
+
+        public MathMLMathTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLMathTest()
+        {
+            Assert.AreEqual("<math></math>", _serializer.SerializeMathMLNode(new MathMLMath()));
+        }
+
+        [TestMethod]
+        public void MathMLMathWithAllAttributesTest()
+        {
+            Assert.AreEqual("<math display=\"inline\" overflow=\"scale\"></math>", _serializer.SerializeMathMLNode(new MathMLMath() { Display = MathMLDisplay.Inline, Overflow = MathMLOverflow.Scale }));
+        }
     }
 }

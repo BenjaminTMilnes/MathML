@@ -73,14 +73,32 @@
     <Compile Include="MathMLEncloseTests.cs" />
     <Compile Include="MathMLFencedTests.cs" />
     <Compile Include="MathMLFractionTests.cs" />
+    <Compile Include="MathMLGlyphTests.cs" />
     <Compile Include="MathMLIdentifierTests.cs" />
+    <Compile Include="MathMLLabeledTableRowTests.cs" />
+    <Compile Include="MathMLLongDivisionTests.cs" />
     <Compile Include="MathMLMathTests.cs" />
+    <Compile Include="MathMLMultiscriptsTests.cs" />
     <Compile Include="MathMLNumberTests.cs" />
     <Compile Include="MathMLOperatorTests.cs" />
+    <Compile Include="MathMLOverTests.cs" />
+    <Compile Include="MathMLPaddedTests.cs" />
+    <Compile Include="MathMLPhantomTests.cs" />
     <Compile Include="MathMLRootTests.cs" />
     <Compile Include="MathMLRowTests.cs" />
+    <Compile Include="MathMLSpaceTests.cs" />
+    <Compile Include="MathMLSquareRootTests.cs" />
+    <Compile Include="MathMLStyleTests.cs" />
+    <Compile Include="MathMLSubscriptSuperscriptTests.cs" />
     <Compile Include="MathMLSubscriptTests.cs" />
     <Compile Include="MathMLSuperscriptTests.cs" />
+    <Compile Include="MathMLTableCellTests.cs" />
+    <Compile Include="MathMLTableRowTests.cs" />
+    <Compile Include="MathMLTableTests.cs" />
+    <Compile Include="MathMLTextNodeTests.cs" />
+    <Compile Include="MathMLTextTests.cs" />
+    <Compile Include="MathMLUnderOverTests.cs" />
+    <Compile Include="MathMLUnderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
