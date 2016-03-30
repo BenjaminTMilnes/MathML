@@ -12,5 +12,22 @@ namespace MathML.Tests
     public class MathMLSuperscriptTests
     {
         private MathMLSerializer _serializer;
+
+        public MathMLSuperscriptTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLSuperscriptTest()
+        {
+            Assert.AreEqual("<msup></msup>", _serializer.SerializeMathMLNode(new MathMLSuperscript()));
+        }
+
+        [TestMethod]
+        public void MathMLSuperscriptWithAllAttributes()
+        {
+            Assert.AreEqual("<msup superscriptshift=\"10pt\"></msup>", _serializer.SerializeMathMLNode(new MathMLSuperscript() { Shift = new MathMLLength(10, MathMLLengthUnit.Points) }));
+        }
     }
 }

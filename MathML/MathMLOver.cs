@@ -10,6 +10,8 @@ namespace MathML
     public class MathMLOver : MathMLElement
     {
         [MathMLAttributeName("accent")]
+        [MathMLAttributeOrderIndex(7)]
+        [DefaultValue(false)]
         public bool Accent { get; set; }
     }
 }

@@ -8,7 +8,20 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLTableTests
+    [TestClass]
+    public class MathMLTableTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLTableTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLTableTest()
+        {
+            Assert.AreEqual("<mtable></mtable>", _serializer.SerializeMathMLNode(new MathMLTable()));
+        }
     }
 }

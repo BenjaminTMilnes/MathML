@@ -12,5 +12,22 @@ namespace MathML.Tests
     public class MathMLSubscriptTests
     {
         private MathMLSerializer _serializer;
+
+        public MathMLSubscriptTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLSubscriptTest()
+        {
+            Assert.AreEqual("<msub></msub>", _serializer.SerializeMathMLNode(new MathMLSubscript()));
+        }
+
+        [TestMethod]
+        public void MathMLSubscriptWithAllAttributesTest()
+        {
+            Assert.AreEqual("<msub subscriptshift=\"10pt\"></msub>", _serializer.SerializeMathMLNode(new MathMLSubscript() { Shift = new MathMLLength(10, MathMLLengthUnit.Points) }));
+        }
     }
 }

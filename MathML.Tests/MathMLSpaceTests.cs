@@ -8,7 +8,26 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLSpaceTests
+    [TestClass]
+    public class MathMLSpaceTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLSpaceTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLSpaceTest()
+        {
+            Assert.AreEqual("<mspace></mspace>", _serializer.SerializeMathMLNode(new MathMLSpace()));
+        }
+
+        [TestMethod]
+        public void MathMLSpaceWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mspace width=\"10pt\" height=\"5mm\" depth=\"20px\" linebreak=\"newline\"></mspace>", _serializer.SerializeMathMLNode(new MathMLSpace() { Width = new MathMLLength(10, MathMLLengthUnit.Points), Height = new MathMLLength(5, MathMLLengthUnit.Millimeters), Depth = new MathMLLength(20, MathMLLengthUnit.Pixels), LineBreak = MathMLLineBreak.NewLine }));
+        }
     }
 }

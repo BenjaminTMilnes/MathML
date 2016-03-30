@@ -12,5 +12,16 @@ namespace MathML.Tests
     public class MathMLRootTests
     {
         private MathMLSerializer _serializer;
+
+        public MathMLRootTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLRootTest()
+        {
+            Assert.AreEqual("<mroot></mroot>", _serializer.SerializeMathMLNode(new MathMLRoot()));
+        }
     }
 }

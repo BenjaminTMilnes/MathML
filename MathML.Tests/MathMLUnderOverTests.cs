@@ -8,7 +8,13 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLUnderOverTests
+    [TestClass]
+    public   class MathMLUnderOverTests
     {
+        private MathMLSerializer _serializer;
+        public MathMLUnderOverTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
     }
 }

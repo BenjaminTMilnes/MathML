@@ -8,7 +8,20 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLPhantomTests
+    [TestClass]
+    public class MathMLPhantomTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLPhantomTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLPhantomTest()
+        {
+            Assert.AreEqual("<mphantom></mphantom>", _serializer.SerializeMathMLNode(new MathMLPhantom()));
+        }
     }
 }

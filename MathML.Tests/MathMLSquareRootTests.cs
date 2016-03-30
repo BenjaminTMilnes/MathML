@@ -8,7 +8,20 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLSquareRootTests
+    [TestClass]
+    public class MathMLSquareRootTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLSquareRootTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLSquareRootTest()
+        {
+            Assert.AreEqual("<msqrt></msqrt>", _serializer.SerializeMathMLNode(new MathMLSquareRoot()));
+        }
     }
 }

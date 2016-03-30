@@ -8,7 +8,26 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLOverTests
+    [TestClass]
+    public class MathMLOverTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLOverTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLOverTest()
+        {
+            Assert.AreEqual("<mover></mover>", _serializer.SerializeMathMLNode(new MathMLOver()));
+        }
+
+        [TestMethod]
+        public void MathMLOverWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mover accent=\"true\"></mover>", _serializer.SerializeMathMLNode(new MathMLOver() { Accent = true }));
+        }
     }
 }

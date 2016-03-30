@@ -12,5 +12,22 @@ namespace MathML.Tests
     public class MathMLRowTests
     {
         private MathMLSerializer _serializer;
+
+        public MathMLRowTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLRowTest()
+        {
+            Assert.AreEqual("<mrow></mrow>", _serializer.SerializeMathMLNode(new MathMLRow()));
+        }
+
+        [TestMethod]
+        public void MathMLRowWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mrow dir=\"rtl\"></mrow>", _serializer.SerializeMathMLNode(new MathMLRow() { TextDirection = MathMLTextDirection.RightToLeft }));
+        }
     }
 }

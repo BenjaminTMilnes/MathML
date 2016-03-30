@@ -8,7 +8,26 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLStyleTests
+    [TestClass]
+    public class MathMLStyleTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLStyleTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLStyleTest()
+        {
+            Assert.AreEqual("<mstyle></mstyle>", _serializer.SerializeMathMLNode(new MathMLStyle()));
+        }
+
+        [TestMethod]
+        public void MathMLStyleWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mstyle dir=\"rtl\" displaystyle=\"false\" decimalpoint=\",\" infixlinebreakstyle=\"duplicate\" scriptlevel=\"10\" scriptminsize=\"15mm\" scriptsizemultiplier=\"2.5\"></mstyle>", _serializer.SerializeMathMLNode(new MathMLStyle() { TextDirection = MathMLTextDirection.RightToLeft, DisplayStyle = false, DecimalPoint = ',', InfixLineBreakStyle = MathMLInfixLineBreakStyle.Duplicate, ScriptLevel = 10, ScriptMinimumSize = new MathMLLength(15, MathMLLengthUnit.Millimeters), ScriptSizeMultiplier = 2.5 }));
+        }
     }
 }

@@ -8,7 +8,26 @@ using MathML;
 
 namespace MathML.Tests
 {
-    class MathMLTableRowTests
+    [TestClass]
+    public class MathMLTableRowTests
     {
+        private MathMLSerializer _serializer;
+
+        public MathMLTableRowTests()
+        {
+            _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLTableRowTest()
+        {
+            Assert.AreEqual("<mtr></mtr>", _serializer.SerializeMathMLNode(new MathMLTableRow()));
+        }
+
+        [TestMethod]
+        public void MathMLTableRowWithAllAttributesTest()
+        {
+            Assert.AreEqual("<mtr rowalign=\"center\" columnalign=\"right\"></mtr>", _serializer.SerializeMathMLNode(new MathMLTableRow() { RowAlignment = MathMLTableVerticalAlignment.Center, ColumnAlignment = MathMLTableColumnAlignment.Right }));
+        }
     }
 }
