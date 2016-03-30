@@ -9,12 +9,25 @@ using MathML;
 namespace MathML.Tests
 {
     [TestClass]
-    public   class MathMLUnderOverTests
+    public class MathMLUnderOverTests
     {
         private MathMLSerializer _serializer;
+
         public MathMLUnderOverTests()
         {
             _serializer = new MathMLSerializer();
+        }
+
+        [TestMethod]
+        public void EmptyMathMLUnderOverTest()
+        {
+            Assert.AreEqual("<munderover></munderover>", _serializer.SerializeMathMLNode(new MathMLUnderOver()));
+        }
+
+        [TestMethod]
+        public void MathMLUnderOverWithAllAttributesTest()
+        {
+            Assert.AreEqual("<munderover accent=\"true\" accentunder=\"true\" align=\"right\"></munderover>", _serializer.SerializeMathMLNode(new MathMLUnderOver() { AccentOver = true, AccentUnder = true, Alignment = MathMLUnderOverAlignment.Right }));
         }
     }
 }

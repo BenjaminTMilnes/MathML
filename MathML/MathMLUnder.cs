@@ -10,7 +10,16 @@ namespace MathML
     public class MathMLUnder : MathMLElement
     {
         [MathMLAttributeName("accentunder")]
+        [MathMLAttributeOrderIndex(7)]
+        [DefaultValue(false)]
         public bool Accent { get; set; }
+
+        public MathMLUnder() : this(false) { }
+
+        public MathMLUnder(bool accent)
+        {
+            Accent = accent;
+        }
     }
 }
 
