@@ -19,14 +19,14 @@ namespace MathML
 
         [MathMLAttributeName("width")]
         [MathMLAttributeOrderIndex(9)]
-        public MathMLLength Width { get; set; }
+        public MathMLMeasuredLength Width { get; set; }
 
         [MathMLAttributeName("height")]
         [MathMLAttributeOrderIndex(10)]
-        public MathMLLength Height { get; set; }
+        public MathMLMeasuredLength Height { get; set; }
 
         [MathMLAttributeName("valign")]
         [MathMLAttributeOrderIndex(11)]
-        public MathMLLength VerticalAlignment { get; set; }
+        public MathMLMeasuredLength VerticalAlignment { get; set; }
     }
 }

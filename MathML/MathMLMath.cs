@@ -17,10 +17,14 @@ namespace MathML
         [DefaultValue(MathMLOverflow.LineBreak)]
         public MathMLOverflow Overflow { get; set; }
 
-        public MathMLMath()
+        public MathMLMath() : this(MathMLDisplay.Block, MathMLOverflow.LineBreak) { }
+
+        public MathMLMath(MathMLDisplay display) : this(display, MathMLOverflow.LineBreak) { }
+
+        public MathMLMath(MathMLDisplay display, MathMLOverflow overflow)
         {
-            Display = MathMLDisplay.Block;
-            Overflow = MathMLOverflow.LineBreak;
+            Display = display;
+            Overflow = overflow;
         }
     }
 }

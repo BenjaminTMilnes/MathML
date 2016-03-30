@@ -11,22 +11,22 @@ namespace MathML
     {
         [MathMLAttributeName("width")]
         [MathMLAttributeOrderIndex(7)]
-        public MathMLLength Width { get; set; }
+        public MathMLMeasuredLength Width { get; set; }
 
         [MathMLAttributeName("height")]
         [MathMLAttributeOrderIndex(8)]
-        public MathMLLength Height { get; set; }
+        public MathMLMeasuredLength Height { get; set; }
 
         [MathMLAttributeName("depth")]
         [MathMLAttributeOrderIndex(9)]
-        public MathMLLength Depth { get; set; }
+        public MathMLMeasuredLength Depth { get; set; }
 
         [MathMLAttributeName("lspace")]
         [MathMLAttributeOrderIndex(10)]
-        public MathMLLength LeftSpace { get; set; }
+        public MathMLMeasuredLength LeftSpace { get; set; }
 
         [MathMLAttributeName("voffset")]
         [MathMLAttributeOrderIndex(11)]
-        public MathMLLength VerticalOffset { get; set; }
+        public MathMLMeasuredLength VerticalOffset { get; set; }
     }
 }

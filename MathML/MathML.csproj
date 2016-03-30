@@ -59,8 +59,8 @@
     <Compile Include="MathMLInfixLineBreakStyle.cs" />
     <Compile Include="MathMLLabeledTableRow.cs" />
     <Compile Include="MathMLLabeledTableRowPlacement.cs" />
-    <Compile Include="MathMLLength.cs" />
-    <Compile Include="MathMLLengthUnit.cs" />
+    <Compile Include="MathMLMeasuredLength.cs" />
+    <Compile Include="MathMLMeasuredLengthUnit.cs" />
     <Compile Include="MathMLLineBreak.cs" />
     <Compile Include="MathMLLongDivision.cs" />
     <Compile Include="MathMLMath.cs" />

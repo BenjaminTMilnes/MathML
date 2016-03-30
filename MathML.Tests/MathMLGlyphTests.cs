@@ -27,7 +27,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLGlyphWithAllAttributesTest()
         {
-            Assert.AreEqual("<mglyph src=\"somefile.png\" alt=\"Some Text\" width=\"12pt\" height=\"14mm\" valign=\"16px\"></mglyph>", _serializer.SerializeMathMLNode(new MathMLGlyph() { AlternativeText = "Some Text", Source = "somefile.png", Width = new MathMLLength(12, MathMLLengthUnit.Points), Height = new MathMLLength(14, MathMLLengthUnit.Millimeters), VerticalAlignment = new MathMLLength(16, MathMLLengthUnit.Pixels) }));
+            Assert.AreEqual("<mglyph src=\"somefile.png\" alt=\"Some Text\" width=\"12pt\" height=\"14mm\" valign=\"16px\"></mglyph>", _serializer.SerializeMathMLNode(new MathMLGlyph() { AlternativeText = "Some Text", Source = "somefile.png", Width = new MathMLMeasuredLength(12, MathMLMeasuredLengthUnit.Points), Height = new MathMLMeasuredLength(14, MathMLMeasuredLengthUnit.Millimeters), VerticalAlignment = new MathMLMeasuredLength(16, MathMLMeasuredLengthUnit.Pixels) }));
         }
     }
 }

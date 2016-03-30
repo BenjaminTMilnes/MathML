@@ -10,6 +10,6 @@ namespace MathML
     public class MathMLSubscript : MathMLElement
     {
         [MathMLAttributeName("subscriptshift")]
-        public MathMLLength Shift { get; set; }
+        public MathMLMeasuredLength Shift { get; set; }
     }
 }

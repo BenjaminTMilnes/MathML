@@ -10,6 +10,7 @@ namespace MathML
     public class MathMLTable : MathMLElement
     {
         [MathMLAttributeName("align")]
+        [DefaultValue(MathMLTableVerticalAlignment.Axis)]
         public MathMLTableVerticalAlignment VerticalAlignment { get; set; }
 
         [MathMLAttributeName("columnalign")]
@@ -19,28 +20,32 @@ namespace MathML
         public IList<MathMLTableLineStyle> ColumnLineStyle { get; set; }
 
         [MathMLAttributeName("columnspacing")]
-        public MathMLLength ColumnSpacing { get; set; }
+        public MathMLMeasuredLength ColumnSpacing { get; set; }
 
         [MathMLAttributeName("columnwidth")]
-        public MathMLLength ColumnWidth { get; set; }
+        public MathMLMeasuredLength ColumnWidth { get; set; }
 
         [MathMLAttributeName("displaystyle")]
+        [DefaultValue(true)]
         public bool DisplayStyle { get; set; }
 
         [MathMLAttributeName("equalcolumns")]
+        [DefaultValue(false)]
         public bool EqualColumnHeights { get; set; }
 
         [MathMLAttributeName("equalrows")]
+        [DefaultValue(false)]
         public bool EqualRowHeights { get; set; }
 
         [MathMLAttributeName("frame")]
+        [DefaultValue(MathMLTableLineStyle.None)]
         public MathMLTableLineStyle Frame { get; set; }
 
         [MathMLAttributeName("framespacing")]
-        public MathMLLength FrameSpacing { get; set; }
+        public MathMLMeasuredLength FrameSpacing { get; set; }
 
         [MathMLAttributeName("minlabelspacing")]
-        public MathMLLength MinimumLabelSpacing { get; set; }
+        public MathMLMeasuredLength MinimumLabelSpacing { get; set; }
 
         [MathMLAttributeName("rowalign")]
         public IList<MathMLTableVerticalAlignment> RowAlignment { get; set; }
@@ -49,12 +54,23 @@ namespace MathML
         public IList<MathMLTableLineStyle> RowLineStyle { get; set; }
 
         [MathMLAttributeName("rowspacing")]
-        public MathMLLength RowSpacing { get; set; }
+        public MathMLMeasuredLength RowSpacing { get; set; }
 
         [MathMLAttributeName("side")]
+        [DefaultValue(MathMLLabeledTableRowPlacement.Right)]
         public MathMLLabeledTableRowPlacement Side { get; set; }
 
         [MathMLAttributeName("width")]
-        public MathMLLength Width { get; set; }
+        public MathMLMeasuredLength Width { get; set; }
+
+        public MathMLTable()
+        {
+            VerticalAlignment = MathMLTableVerticalAlignment.Axis;
+            DisplayStyle = true;
+            EqualColumnHeights = false;
+            EqualRowHeights = false;
+            Frame = MathMLTableLineStyle.None;
+            Side = MathMLLabeledTableRowPlacement.Right;
+        }
     }
 }

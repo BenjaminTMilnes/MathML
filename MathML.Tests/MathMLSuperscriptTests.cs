@@ -27,7 +27,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLSuperscriptWithAllAttributes()
         {
-            Assert.AreEqual("<msup superscriptshift=\"10pt\"></msup>", _serializer.SerializeMathMLNode(new MathMLSuperscript() { Shift = new MathMLLength(10, MathMLLengthUnit.Points) }));
+            Assert.AreEqual("<msup superscriptshift=\"10pt\"></msup>", _serializer.SerializeMathMLNode(new MathMLSuperscript() { Shift = new MathMLMeasuredLength(10, MathMLMeasuredLengthUnit.Points) }));
         }
     }
 }

@@ -27,7 +27,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLSubscriptWithAllAttributesTest()
         {
-            Assert.AreEqual("<msub subscriptshift=\"10pt\"></msub>", _serializer.SerializeMathMLNode(new MathMLSubscript() { Shift = new MathMLLength(10, MathMLLengthUnit.Points) }));
+            Assert.AreEqual("<msub subscriptshift=\"10pt\"></msub>", _serializer.SerializeMathMLNode(new MathMLSubscript() { Shift = new MathMLMeasuredLength(10, MathMLMeasuredLengthUnit.Points) }));
         }
     }
 }

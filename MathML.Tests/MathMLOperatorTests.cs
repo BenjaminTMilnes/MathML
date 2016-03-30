@@ -38,7 +38,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLOperatorWithAllAttributes()
         {
-            Assert.AreEqual("<mo dir=\"rtl\" mathvariant=\"bold\" form=\"postfix\" largeop=\"true\" movablelimits=\"true\" accent=\"true\" fence=\"true\" stretchy=\"true\" symmetric=\"true\" lspace=\"10pt\" rspace=\"5mm\"></mo>", _serializer.SerializeMathMLNode(new MathMLOperator() { Accent = true, Fence = true, Form = MathMLOperatorForm.Postfix, LargeOperator = true, MovableLimits = true, Stretchy = true, Symmetric = true, LeftSpace = new MathMLLength(10, MathMLLengthUnit.Points), RightSpace = new MathMLLength(5, MathMLLengthUnit.Millimeters), TextDirection = MathMLTextDirection.RightToLeft, MathVariant = MathMLMathVariant.Bold }));
+            Assert.AreEqual("<mo dir=\"rtl\" mathvariant=\"bold\" form=\"postfix\" largeop=\"true\" movablelimits=\"true\" accent=\"true\" fence=\"true\" stretchy=\"true\" symmetric=\"true\" lspace=\"10pt\" rspace=\"5mm\"></mo>", _serializer.SerializeMathMLNode(new MathMLOperator() { Accent = true, Fence = true, Form = MathMLOperatorForm.Postfix, LargeOperator = true, MovableLimits = true, Stretchy = true, Symmetric = true, LeftSpace = new MathMLMeasuredLength(10, MathMLMeasuredLengthUnit.Points), RightSpace = new MathMLMeasuredLength(5, MathMLMeasuredLengthUnit.Millimeters), TextDirection = MathMLTextDirection.RightToLeft, MathVariant = MathMLMathVariant.Bold }));
         }
     }
 }

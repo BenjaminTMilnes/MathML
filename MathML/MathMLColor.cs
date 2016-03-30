@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
-    public class MathMLColor
+    public abstract class MathMLColor
     {
     }
 }

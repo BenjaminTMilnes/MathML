@@ -162,7 +162,7 @@ namespace MathML
             else if (value is MathMLTableVerticalAlignment) return SerializeEnumeration((MathMLTableVerticalAlignment)value);
             else if (value is MathMLTextDirection) return SerializeEnumeration((MathMLTextDirection)value);
             else if (value is MathMLUnderOverAlignment) return SerializeEnumeration((MathMLUnderOverAlignment)value);
-            else if (value is MathMLLength) return SerializeMathMLLength((MathMLLength)value);
+            else if (value is MathMLMeasuredLength) return SerializeMathMLLength((MathMLMeasuredLength)value);
             else if (value is MathMLColor) return SerializeMathMLColor((MathMLColor)value);
 
             throw new UnknownMathMLAttributeTypeException();
@@ -183,7 +183,7 @@ namespace MathML
             return ((MathMLAttributeValue)attribute).Value;
         }
 
-        private string SerializeMathMLLength(MathMLLength length)
+        private string SerializeMathMLLength(MathMLMeasuredLength length)
         {
             return string.Format("{0}{1}", length.Quantity.ToString(), SerializeEnumeration(length.Units));
         }

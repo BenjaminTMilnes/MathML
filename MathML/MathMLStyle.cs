@@ -36,7 +36,7 @@ namespace MathML
 
         [MathMLAttributeName("scriptminsize")]
         [MathMLAttributeOrderIndex(12)]
-        public MathMLLength ScriptMinimumSize { get; set; }
+        public MathMLMeasuredLength ScriptMinimumSize { get; set; }
 
         [MathMLAttributeName("scriptsizemultiplier")]
         [MathMLAttributeOrderIndex(13)]

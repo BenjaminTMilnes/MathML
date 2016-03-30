@@ -27,7 +27,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLStyleWithAllAttributesTest()
         {
-            Assert.AreEqual("<mstyle dir=\"rtl\" displaystyle=\"false\" decimalpoint=\",\" infixlinebreakstyle=\"duplicate\" scriptlevel=\"10\" scriptminsize=\"15mm\" scriptsizemultiplier=\"2.5\"></mstyle>", _serializer.SerializeMathMLNode(new MathMLStyle() { TextDirection = MathMLTextDirection.RightToLeft, DisplayStyle = false, DecimalPoint = ',', InfixLineBreakStyle = MathMLInfixLineBreakStyle.Duplicate, ScriptLevel = 10, ScriptMinimumSize = new MathMLLength(15, MathMLLengthUnit.Millimeters), ScriptSizeMultiplier = 2.5 }));
+            Assert.AreEqual("<mstyle dir=\"rtl\" displaystyle=\"false\" decimalpoint=\",\" infixlinebreakstyle=\"duplicate\" scriptlevel=\"10\" scriptminsize=\"15mm\" scriptsizemultiplier=\"2.5\"></mstyle>", _serializer.SerializeMathMLNode(new MathMLStyle() { TextDirection = MathMLTextDirection.RightToLeft, DisplayStyle = false, DecimalPoint = ',', InfixLineBreakStyle = MathMLInfixLineBreakStyle.Duplicate, ScriptLevel = 10, ScriptMinimumSize = new MathMLMeasuredLength(15, MathMLMeasuredLengthUnit.Millimeters), ScriptSizeMultiplier = 2.5 }));
         }
     }
 }

@@ -51,11 +51,11 @@ namespace MathML
 
         [MathMLAttributeName("lspace")]
         [MathMLAttributeOrderIndex(17)]
-        public MathMLLength LeftSpace { get; set; }
+        public MathMLMeasuredLength LeftSpace { get; set; }
 
         [MathMLAttributeName("rspace")]
         [MathMLAttributeOrderIndex(18)]
-        public MathMLLength RightSpace { get; set; }
+        public MathMLMeasuredLength RightSpace { get; set; }
 
         [MathMLAttributeName("dir")]
         [MathMLAttributeOrderIndex(7)]

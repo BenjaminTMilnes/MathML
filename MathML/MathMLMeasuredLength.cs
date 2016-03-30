@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
-    public class MathMLLength
+    public class MathMLMeasuredLength
     {
         public double Quantity { get; private set; }
-        public MathMLLengthUnit Units { get; private set; }
+        public MathMLMeasuredLengthUnit Units { get; private set; }
 
-        public MathMLLength(double quantity, MathMLLengthUnit units)
+        public MathMLMeasuredLength(double quantity, MathMLMeasuredLengthUnit units)
         {
             Quantity = quantity;
             Units = units;

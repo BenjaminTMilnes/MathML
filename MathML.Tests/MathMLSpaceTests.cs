@@ -27,7 +27,7 @@ namespace MathML.Tests
         [TestMethod]
         public void MathMLSpaceWithAllAttributesTest()
         {
-            Assert.AreEqual("<mspace width=\"10pt\" height=\"5mm\" depth=\"20px\" linebreak=\"newline\"></mspace>", _serializer.SerializeMathMLNode(new MathMLSpace() { Width = new MathMLLength(10, MathMLLengthUnit.Points), Height = new MathMLLength(5, MathMLLengthUnit.Millimeters), Depth = new MathMLLength(20, MathMLLengthUnit.Pixels), LineBreak = MathMLLineBreak.NewLine }));
+            Assert.AreEqual("<mspace width=\"10pt\" height=\"5mm\" depth=\"20px\" linebreak=\"newline\"></mspace>", _serializer.SerializeMathMLNode(new MathMLSpace() { Width = new MathMLMeasuredLength(10, MathMLMeasuredLengthUnit.Points), Height = new MathMLMeasuredLength(5, MathMLMeasuredLengthUnit.Millimeters), Depth = new MathMLMeasuredLength(20, MathMLMeasuredLengthUnit.Pixels), LineBreak = MathMLLineBreak.NewLine }));
         }
     }
 }

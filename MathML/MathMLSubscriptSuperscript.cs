@@ -10,9 +10,9 @@ namespace MathML
     public class MathMLSubscriptSuperscript : MathMLElement
     {
         [MathMLAttributeName("subscriptshift")]
-        public MathMLLength SubscriptShift { get; set; }
+        public MathMLMeasuredLength SubscriptShift { get; set; }
 
         [MathMLAttributeName("superscriptshift")]
-        public MathMLLength SuperscriptShift { get; set; }
+        public MathMLMeasuredLength SuperscriptShift { get; set; }
     }
 }

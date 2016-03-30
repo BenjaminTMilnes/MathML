@@ -13,5 +13,12 @@ namespace MathML
         [MathMLAttributeOrderIndex(7)]
         [DefaultValue(false)]
         public bool Accent { get; set; }
+
+        public MathMLOver() : this(false) { }
+
+        public MathMLOver(bool accent)
+        {
+            Accent = accent;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathML
 {
-    public enum MathMLLengthUnit
+    public enum MathMLMeasuredLengthUnit
     {
         [MathMLAttributeValue("em")]
         Em = 0,
