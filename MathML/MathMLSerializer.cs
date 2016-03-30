@@ -10,7 +10,10 @@ namespace MathML
 
     public class UnknownMathMLElementException : Exception { }
 
-    public class MathMLSerializer
+    public class UnknownMathMLAttributeTypeException : Exception
+    { }
+
+    public sealed class MathMLSerializer
     {
         public string SerializeMathMLNode(IMathMLNode node)
         {
@@ -98,11 +101,8 @@ namespace MathML
                 var isAttribute = false;
                 var attributeName = "";
                 var attributeOrderIndex = 100;
-                var attributeValue = "";
 
-                object defaultValue = null;
-
-                var propertyType = property.PropertyType;
+                object defaultPropertyValue = null;
 
                 var propertyAttributes = property.GetCustomAttributes(true);
 
@@ -119,7 +119,7 @@ namespace MathML
                     }
                     else if (propertyAttribute is DefaultValue)
                     {
-                        defaultValue = ((DefaultValue)propertyAttribute).Value;
+                        defaultPropertyValue = ((DefaultValue)propertyAttribute).Value;
                     }
                 }
 
@@ -127,63 +127,8 @@ namespace MathML
                 {
                     var propertyValue = property.GetValue(element, null);
 
-                    if (propertyValue == null)
-                    {
-                        attributeValue = "";
-                    }
-                    else
-                    {
-                        if (propertyType == typeof(int)) attributeValue = SerializeInteger((int)propertyValue);
-                        else if (propertyType == typeof(bool)) attributeValue = SerializeBoolean((bool)propertyValue);
-                        else if (propertyType == typeof(char)) attributeValue = ((char)propertyValue).ToString();
-                        else if (propertyType == typeof(double)) attributeValue = ((double)propertyValue).ToString();
-                        else if (propertyType == typeof(MathMLDisplay)) attributeValue = SerializeEnumeration((MathMLDisplay)propertyValue);
-                        else if (propertyType == typeof(MathMLEncloseNotation)) attributeValue = SerializeEnumeration((MathMLEncloseNotation)propertyValue);
-                        else if (propertyType == typeof(MathMLFractionPartAlignment)) attributeValue = SerializeEnumeration((MathMLFractionPartAlignment)propertyValue);
-                        else if (propertyType == typeof(MathMLInfixLineBreakStyle)) attributeValue = SerializeEnumeration((MathMLInfixLineBreakStyle)propertyValue);
-                        else if (propertyType == typeof(MathMLLabeledTableRowPlacement)) attributeValue = SerializeEnumeration((MathMLLabeledTableRowPlacement)propertyValue);
-                        else if (propertyType == typeof(MathMLLineBreak)) attributeValue = SerializeEnumeration((MathMLLineBreak)propertyValue);
-                        else if (propertyType == typeof(MathMLMathVariant)) attributeValue = SerializeEnumeration((MathMLMathVariant)propertyValue);
-                        else if (propertyType == typeof(MathMLOperatorForm)) attributeValue = SerializeEnumeration((MathMLOperatorForm)propertyValue);
-                        else if (propertyType == typeof(MathMLOverflow)) attributeValue = SerializeEnumeration((MathMLOverflow)propertyValue);
-                        else if (propertyType == typeof(MathMLTableColumnAlignment)) attributeValue = SerializeEnumeration((MathMLTableColumnAlignment)propertyValue);
-                        else if (propertyType == typeof(MathMLTableLineStyle)) attributeValue = SerializeEnumeration((MathMLTableLineStyle)propertyValue);
-                        else if (propertyType == typeof(MathMLTableVerticalAlignment)) attributeValue = SerializeEnumeration((MathMLTableVerticalAlignment)propertyValue);
-                        else if (propertyType == typeof(MathMLTextDirection)) attributeValue = SerializeEnumeration((MathMLTextDirection)propertyValue);
-                        else if (propertyType == typeof(MathMLUnderOverAlignment)) attributeValue = SerializeEnumeration((MathMLUnderOverAlignment)propertyValue);
-                        else if (propertyType == typeof(MathMLLength)) attributeValue = SerializeMathMLLength((MathMLLength)propertyValue);
-                        else attributeValue = (string)propertyValue;
-                    }
-
-                    var defaultAttributeValue = "";
-
-                    if (defaultValue == null)
-                    {
-                        defaultAttributeValue = "";
-                    }
-                    else
-                    {
-                        if (defaultValue is int) defaultAttributeValue = SerializeInteger((int)defaultValue);
-                        else if (defaultValue is bool) defaultAttributeValue = SerializeBoolean((bool)defaultValue);
-                        else if (defaultValue is char) defaultAttributeValue = ((char)defaultValue).ToString();
-                        else if (defaultValue is double) defaultAttributeValue = ((double)defaultValue).ToString();
-                        else if (defaultValue is MathMLDisplay) defaultAttributeValue = SerializeEnumeration((MathMLDisplay)defaultValue);
-                        else if (defaultValue is MathMLEncloseNotation) defaultAttributeValue = SerializeEnumeration((MathMLEncloseNotation)defaultValue);
-                        else if (defaultValue is MathMLFractionPartAlignment) defaultAttributeValue = SerializeEnumeration((MathMLFractionPartAlignment)defaultValue);
-                        else if (defaultValue is MathMLInfixLineBreakStyle) defaultAttributeValue = SerializeEnumeration((MathMLInfixLineBreakStyle)defaultValue);
-                        else if (defaultValue is MathMLLabeledTableRowPlacement) defaultAttributeValue = SerializeEnumeration((MathMLLabeledTableRowPlacement)defaultValue);
-                        else if (defaultValue is MathMLLineBreak) defaultAttributeValue = SerializeEnumeration((MathMLLineBreak)defaultValue);
-                        else if (defaultValue is MathMLMathVariant) defaultAttributeValue = SerializeEnumeration((MathMLMathVariant)defaultValue);
-                        else if (defaultValue is MathMLOperatorForm) defaultAttributeValue = SerializeEnumeration((MathMLOperatorForm)defaultValue);
-                        else if (defaultValue is MathMLOverflow) defaultAttributeValue = SerializeEnumeration((MathMLOverflow)defaultValue);
-                        else if (defaultValue is MathMLTableColumnAlignment) defaultAttributeValue = SerializeEnumeration((MathMLTableColumnAlignment)defaultValue);
-                        else if (defaultValue is MathMLTableLineStyle) defaultAttributeValue = SerializeEnumeration((MathMLTableLineStyle)defaultValue);
-                        else if (defaultValue is MathMLTableVerticalAlignment) defaultAttributeValue = SerializeEnumeration((MathMLTableVerticalAlignment)defaultValue);
-                        else if (defaultValue is MathMLTextDirection) defaultAttributeValue = SerializeEnumeration((MathMLTextDirection)defaultValue);
-                        else if (defaultValue is MathMLUnderOverAlignment) defaultAttributeValue = SerializeEnumeration((MathMLUnderOverAlignment)defaultValue);
-                        else if (defaultValue is MathMLLength) defaultAttributeValue = SerializeMathMLLength((MathMLLength)defaultValue);
-                        else defaultAttributeValue = (string)defaultValue;
-                    }
+                    var attributeValue = SerializeAttributeValue(propertyValue);
+                    var defaultAttributeValue = SerializeAttributeValue(defaultPropertyValue);
 
                     if (attributeValue != defaultAttributeValue)
                     {
@@ -195,9 +140,32 @@ namespace MathML
             return attributes.OrderBy(a => a.Item2);
         }
 
-        private string SerializeInteger(int value)
+        private string SerializeAttributeValue(object value)
         {
-            return value.ToString();
+            if (value == null) return "";
+            else if (value is int) return ((int)value).ToString();
+            else if (value is double) return ((double)value).ToString();
+            else if (value is bool) return SerializeBoolean((bool)value);
+            else if (value is char) return ((char)value).ToString();
+            else if (value is string) return (string)value;
+            else if (value is MathMLDisplay) return SerializeEnumeration((MathMLDisplay)value);
+            else if (value is MathMLEncloseNotation) return SerializeEnumeration((MathMLEncloseNotation)value);
+            else if (value is MathMLFractionPartAlignment) return SerializeEnumeration((MathMLFractionPartAlignment)value);
+            else if (value is MathMLInfixLineBreakStyle) return SerializeEnumeration((MathMLInfixLineBreakStyle)value);
+            else if (value is MathMLLabeledTableRowPlacement) return SerializeEnumeration((MathMLLabeledTableRowPlacement)value);
+            else if (value is MathMLLineBreak) return SerializeEnumeration((MathMLLineBreak)value);
+            else if (value is MathMLMathVariant) return SerializeEnumeration((MathMLMathVariant)value);
+            else if (value is MathMLOperatorForm) return SerializeEnumeration((MathMLOperatorForm)value);
+            else if (value is MathMLOverflow) return SerializeEnumeration((MathMLOverflow)value);
+            else if (value is MathMLTableColumnAlignment) return SerializeEnumeration((MathMLTableColumnAlignment)value);
+            else if (value is MathMLTableLineStyle) return SerializeEnumeration((MathMLTableLineStyle)value);
+            else if (value is MathMLTableVerticalAlignment) return SerializeEnumeration((MathMLTableVerticalAlignment)value);
+            else if (value is MathMLTextDirection) return SerializeEnumeration((MathMLTextDirection)value);
+            else if (value is MathMLUnderOverAlignment) return SerializeEnumeration((MathMLUnderOverAlignment)value);
+            else if (value is MathMLLength) return SerializeMathMLLength((MathMLLength)value);
+            else if (value is MathMLColor) return SerializeMathMLColor((MathMLColor)value);
+
+            throw new UnknownMathMLAttributeTypeException();
         }
 
         private string SerializeBoolean(bool value)
@@ -218,6 +186,14 @@ namespace MathML
         private string SerializeMathMLLength(MathMLLength length)
         {
             return string.Format("{0}{1}", length.Quantity.ToString(), SerializeEnumeration(length.Units));
+        }
+
+        private string SerializeMathMLColor(MathMLColor color)
+        {
+            if (color is MathMLNamedColor) return ((MathMLNamedColor)color).Name;
+            else if (color is MathMLRGBColor) return ((MathMLRGBColor)color).ToString();
+
+            return "";
         }
     }
 }
